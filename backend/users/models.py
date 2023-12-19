@@ -25,14 +25,14 @@ class User(AbstractUser):
     )
     rel_user_n_n = models.ManyToManyField(
         "users.User",
+        null=True,
         blank=True,
         related_name="user_rel_user_n_n",
-        null=True,
     )
     rel_dcom_1_1 = models.OneToOneField(
         "home.Dcom",
-        blank=True,
         null=True,
+        blank=True,
         on_delete=models.CASCADE,
         related_name="user_rel_dcom_1_1",
     )
